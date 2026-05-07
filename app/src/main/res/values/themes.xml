@@ -1,9 +1,19 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Base.Theme.Fluveny" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+    <style name="Base.Theme.Fluveny" parent="Theme.Material3.Light.NoActionBar">
+        <item name="colorPrimary">@color/fluveny_blue</item>
+        <item name="colorPrimaryDark">@color/fluveny_blue_dark</item>
+        <item name="colorAccent">@color/fluveny_blue</item>
+        <item name="android:fontFamily">sans</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:statusBarColor">@color/fluveny_bg</item>
+        <item name="android:navigationBarColor">@color/white</item>
     </style>
 
     <style name="Theme.Fluveny" parent="Base.Theme.Fluveny" />
+
+    <style name="Widget.Fluveny.Button" parent="Widget.Material3.Button">
+        <item name="cornerRadius">18dp</item>
+        <item name="backgroundTint">@color/fluveny_blue</item>
+    </style>
 </resources>
