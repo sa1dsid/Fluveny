@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="ru.fluveny.presentation.auth.LoginFragment"
+        android:label="Вход">
+        <action
+            android:id="@+id/action_loginFragment_to_registerFragment"
+            app:destination="@id/registerFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_dashboardFragment"
+            app:destination="@id/dashboardFragment"
+            app:popUpTo="@id/loginFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="ru.fluveny.presentation.auth.RegisterFragment"
+        android:label="Регистрация" />
+
+    <fragment
+        android:id="@+id/dashboardFragment"
+        android:name="ru.fluveny.presentation.dashboard.DashboardFragment"
+        android:label="Главная">
+        <action
+            android:id="@+id/action_dashboardFragment_to_chatFragment"
+            app:destination="@id/chatFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/chatsFragment"
+        android:name="ru.fluveny.presentation.chats.ChatsFragment"
+        android:label="Чаты">
+        <action
+            android:id="@+id/action_chatsFragment_to_chatFragment"
+            app:destination="@id/chatFragment" />
+        <action
+            android:id="@+id/action_chatsFragment_to_createChatFragment"
+            app:destination="@id/createChatFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/createChatFragment"
+        android:name="ru.fluveny.presentation.chats.CreateChatFragment"
+        android:label="Новый чат">
+        <action
+            android:id="@+id/action_createChatFragment_to_chatFragment"
+            app:destination="@id/chatFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/chatFragment"
+        android:name="ru.fluveny.presentation.chat.ChatFragment"
+        android:label="Чат">
+        <argument
+            android:name="chatId"
+            app:argType="long" />
+        <argument
+            android:name="chatName"
+            app:argType="string"
+            android:defaultValue="" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/recommendationsFragment"
+        android:name="ru.fluveny.presentation.recommendations.RecommendationsFragment"
+        android:label="Обучение" />
+
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="ru.fluveny.presentation.profile.ProfileFragment"
+        android:label="Профиль">
+        <action
+            android:id="@+id/action_profileFragment_to_loginFragment"
+            app:destination="@id/loginFragment"
+            app:popUpTo="@id/nav_graph"
+            app:popUpToInclusive="true" />
+    </fragment>
+</navigation>

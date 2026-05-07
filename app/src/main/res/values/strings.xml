@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Fluveny</string>
+    <string name="base_url">https://dev.fluveny.com/</string>
 </resources>
